@@ -304,9 +304,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)  {
 			{
 				if (M[MOTOR1].startOffset>=20) {M[MOTOR1].startOffset = M[MOTOR1].startOffset-2;} //flyer
 				if (M[MOTOR2].startOffset>=20) {M[MOTOR2].startOffset = M[MOTOR2].startOffset-2;} //bobbin
-				if (M[MOTOR3].startOffset>=20) {M[MOTOR3].startOffset = M[MOTOR3].startOffset-5;} //front roller
-				if (M[MOTOR4].startOffset>=20) {M[MOTOR4].startOffset = M[MOTOR4].startOffset-5;} //back roller
-				if (M[MOTOR5].startOffset>=20) {M[MOTOR5].startOffset = M[MOTOR5].startOffset-5;} //left lift
+				if (M[MOTOR3].startOffset>=20) {M[MOTOR3].startOffset = M[MOTOR3].startOffset-2;} //front roller
+				if (M[MOTOR4].startOffset>=20) {M[MOTOR4].startOffset = M[MOTOR4].startOffset-2;} //back roller
+				if (M[MOTOR5].startOffset>=20) {M[MOTOR5].startOffset = M[MOTOR5].startOffset-2;} //left lift
 
 				S.RTFmultiplier = FFs.rampDownRtfMultiplier; //constant rtf while ramping down
 				FFs.logRTFMultiplier = (int)(S.RTFmultiplier * 100);

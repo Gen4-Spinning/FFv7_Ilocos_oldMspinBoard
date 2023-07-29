@@ -116,26 +116,26 @@ void RunState(void)
 			
 		/* if all layers over */
 		maxLayersOver = LengthLimitReached();
-		if (maxLayersOver == 1)
-			{ S.state_change = TO_ENDSTATE;
-				S.current_state =  END_STATE;
-				S.prev_state = RUN_STATE;
-				S.errStopReason = ERR_LAYERS_COMPLETE;
-				S.errStopReasonHMI = ERR_LAYERS_COMPLETE;
-				S.errmotorFault = NO_VAR; // TO define in both
-				S.errVal = NO_FLOAT_VAR;	// for hmi the val is actually an int.so is overwritten inside the get string HMI error Packet fn
-				S.updateBasePackets = 1;
-				S.keyState = DISABLE; // this will get set when all the motors stop
-				S.updateBasePackets = 1;
-				HAL_TIM_Base_Stop_IT(&htim7);
-				HAL_TIM_Base_Stop_IT(&htim11);
-				M[MOTOR1].rampRpm = FFs.rampDownRate; // ramp down RPM;
-				startFlag = 0; // will make the motor RAMP DOWN
-				break;
-			}
+		if (maxLayersOver == 1){
+			S.state_change = TO_ENDSTATE;
+			S.current_state =  END_STATE;
+			S.prev_state = RUN_STATE;
+			S.errStopReason = ERR_LAYERS_COMPLETE;
+			S.errStopReasonHMI = ERR_LAYERS_COMPLETE;
+			S.errmotorFault = NO_VAR; // TO define in both
+			S.errVal = NO_FLOAT_VAR;	// for hmi the val is actually an int.so is overwritten inside the get string HMI error Packet fn
+			S.updateBasePackets = 1;
+			S.keyState = DISABLE; // this will get set when all the motors stop
+			S.updateBasePackets = 1;
+			HAL_TIM_Base_Stop_IT(&htim7);
+			HAL_TIM_Base_Stop_IT(&htim11);
+			M[MOTOR1].rampRpm = FFs.rampDownRate; // ramp down RPM;
+			startFlag = 0; // will make the motor RAMP DOWN
+			break;
+		}
 
 				
-	 /**************************************************/
+		/**************************************************
 		sliverCut = 0;
 		if (sliverCut)
 			{
@@ -157,7 +157,7 @@ void RunState(void)
 				TowerLamp(AMBER_OFF);
 				HAL_Delay(200);
 				break;
-			}
+		}*/
 
 		//Check for RPM ERROR, to go into halt State
 		if (E.RpmErrorFlag == 1)
