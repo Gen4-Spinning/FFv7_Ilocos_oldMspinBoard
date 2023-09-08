@@ -71,8 +71,9 @@ void PauseState(void)
 				ResetEncoderVariables(&encs);
 				ResetStartOffsetVars(); // might  need to reset offset Voltage..
 
-				TowerLamp(AMBER_ON);
-				TowerLamp(GREEN_OFF);
+				TowerLamp(GREEN_ON);
+				TowerLamp(AMBER_OFF);
+				TowerLamp(RED_OFF);
 
 				startFlag = 1;
 				allMotorsOn = 1;
